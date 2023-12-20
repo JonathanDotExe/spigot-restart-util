@@ -36,4 +36,16 @@ public class RestartHandler implements Listener {
 		timer = 0;
 	}
 
+	public int getTimer() {
+		return timer;
+	}
+
+	public int getInterval() {
+		return interval;
+	}
+
+	public boolean isRestartWithOnlinePlayers() {
+		return restartWithOnlinePlayers;
+	}
+	
 }
