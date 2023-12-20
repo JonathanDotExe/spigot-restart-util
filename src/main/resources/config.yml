@@ -1,0 +1,4 @@
+saveInterval: 10
+restartInterval: 60
+restartWithOnlinePlayers: false
+resetartInterruptNeedsOp: false

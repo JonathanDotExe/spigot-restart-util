@@ -19,14 +19,14 @@ public class RestartHandler implements Listener {
 		
 		Bukkit.getScheduler().scheduleSyncRepeatingTask(plugin, () -> {
 			timer++;
-			if (timer >= this.interval) {
+			if (this.interval > 0 && timer >= this.interval) {
 				if (this.restartWithOnlinePlayers || Bukkit.getOnlinePlayers().isEmpty()) {
 					Bukkit.broadcastMessage("Restarting server now!");
 					Bukkit.spigot().restart();
 				}
 				timer = 0;
 			}
-			else if (timer >= this.interval - 1 && this.restartWithOnlinePlayers) {
+			else if (this.interval > 0 && timer >= this.interval - 1 && this.restartWithOnlinePlayers) {
 				Bukkit.broadcastMessage("Restarting server in one minute, you can use /interruptrestart to prevent this!");
 			}
 		}, TICKS_PER_MINUTE, TICKS_PER_MINUTE);
