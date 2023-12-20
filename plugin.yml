@@ -1,6 +1,0 @@
-name: RestartUtil
-main: at.jojokobi.restartutil.RestartUtilPlugin
-author: jojokobi
-version: 0.1
-api-version: 1.16
-commands:
