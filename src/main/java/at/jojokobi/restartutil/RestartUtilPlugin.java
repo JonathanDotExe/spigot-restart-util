@@ -9,7 +9,10 @@ public class RestartUtilPlugin extends JavaPlugin {
 	public void onEnable() {
 		super.onEnable();
 		int interval = getConfig().getInt("restartInterval", -1);
-		Bukkit.getPluginManager().registerEvents(new RestartHandler(this, interval), this);
+		boolean restartWithOnlinePlayers = getConfig().getBoolean("restartWithOnlinePlayers", true);
+		
+		RestartHandler restartHandler = new RestartHandler(this, interval, restartWithOnlinePlayers);
+		Bukkit.getPluginManager().registerEvents(restartHandler, this);
 	}
 
 }
